@@ -1,6 +1,7 @@
 package com.java.lambda;
 
 import java.util.function.Function;
+import java.util.function.ToIntBiFunction;
 
 public class FunctionAndThenComposeEx {
     public static void main(String[] args) {
@@ -9,8 +10,8 @@ public class FunctionAndThenComposeEx {
         Function<Member,String> functionAB;
         String city;
 
-        functionA  = (member) -> member.getAddress(); //Function 인터페이스의 apply메소드 정의를 람다표현식으로 정의
-        functionB = (m)->m.getCity();
+        functionA  = Member::getAddress; //Function 인터페이스의 apply메소드 정의를 람다표현식으로 정의
+        functionB = Address::getCity;
         Member member = new Member();
 
         Address address = functionA.apply(

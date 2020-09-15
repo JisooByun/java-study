@@ -1,12 +1,24 @@
 package com.java.lambda;
 
 
+import lombok.AllArgsConstructor;
 
 public class Member {
     private String name;
     private String id;
     private Address address;
-    public Member(){
+
+    public Member() {
+
+    }
+
+    public Member(String name) {
+        this.name = name;
+    }
+
+    public Member(String name, String id) {
+        this.name = name;
+        this.id = id;
 
     }
 
