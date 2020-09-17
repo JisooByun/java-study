@@ -25,7 +25,7 @@ public class Profile {
         boolean kill = false;
         boolean anyMatches = false;
         for (Criterion criterion : criteria) {
-            Answer answer = answers.get(criterion.getAnswer().getQuestionText());
+            Answer answer = answers.get(criterion.getAnswer().getQuestionText()); // criterion에 답변자의 답변이 들어있고 그 답변은 무슨 질문에서 나온 답변인지 정보가 있음.
             boolean match = criterion.getWeight() == Weight.DontCare || answer.match(criterion.getAnswer());
             if(!match && criterion.getWeight()==Weight.MustMatch){
                 kill = true;
